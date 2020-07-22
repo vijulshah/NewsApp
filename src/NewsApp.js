@@ -1,6 +1,9 @@
 import React from 'react';  
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
+//firebase
+import firebase from "@react-native-firebase/app";
+import firestore from '@react-native-firebase/firestore';
 //Auth
 import LoginSignup from './authentication/LoginSignup.js';
 //Home
@@ -15,7 +18,7 @@ const AuthNavigator = createStackNavigator({
     LoginSignup: {screen: LoginSignup}
 },
 {
-    initialRouteName: 'Login',
+    initialRouteName: 'LoginSignup',
     defaultNavigationOptions: {
         headerShown: false
     }

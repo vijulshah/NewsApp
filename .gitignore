@@ -60,3 +60,6 @@ buck-out/
 
 # Custom
 /src/configs/
+
+# Google
+/android/app/google-services.json

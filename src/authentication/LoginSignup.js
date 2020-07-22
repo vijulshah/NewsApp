@@ -1,7 +1,8 @@
 //react-native
 import React from 'react';
-import { View, Text, AsyncStorage, TouchableOpacity } from 'react-native';
+import { View, Text, Image } from 'react-native';
 //plugins
+import AsyncStorage from '@react-native-community/async-storage';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
 //redux
 import { connect } from 'react-redux';
@@ -20,11 +21,14 @@ class LoginSignup extends React.Component {
         super(props);
 
         AsyncStorage.getItem("userData").then((data)=>{
-            let userData = JSON.parse(data);
-            if(userData.uid)
+            if(data)
             {
-                this.storeReduxData(userData);
-                this.props.navigation.navigate("AppNavigator");
+                let userData = JSON.parse(data);
+                if(userData.uid)
+                {
+                    this.storeReduxData(userData);
+                    this.props.navigation.navigate("AppNavigator");
+                }
             }
         })
         .catch((error)=>{
@@ -47,7 +51,11 @@ class LoginSignup extends React.Component {
     render(){
         return(
             <View style={styles.mainContainer}>
-                <Text style={styles.appTitle}>News App</Text>
+                <Image
+                    source={require("../assets/icons/app_logo.png")}
+                    style={styles.appLogo}
+                />
+                <Text style={styles.appTitle}>news up</Text>
                 <Text style={styles.appSubTitle}>Get the latest news here</Text>
                 <GoogleSigninButton
                     style={styles.loginSignupButton}
@@ -55,6 +63,8 @@ class LoginSignup extends React.Component {
                     color={GoogleSigninButton.Color.Light}
                     onPress={()=>this.doLogin()}
                     disabled={this.state.isSigninInProgress} />
+                <View style={styles.bg1}>
+                </View>
             </View>
         );
     }
@@ -77,7 +87,7 @@ class LoginSignup extends React.Component {
                 photoURL: user.photoURL
             }));
             this.setState({ isSigninInProgress: false });
-            this.props.navigation.navigate("Home");
+            this.props.navigation.navigate("HomePage");
         }
         catch (error)
         {
@@ -98,12 +108,9 @@ class LoginSignup extends React.Component {
         {
             await GoogleSignin.hasPlayServices();
             let userInfo = await GoogleSignin.signIn();
-
             var credential = auth.GoogleAuthProvider.credential(userInfo.idToken);
-
             let response = await auth().signInWithCredential(credential);
             let user = response.user;
-            
             this.storeUserDetails(user);
         } 
         catch (error) 
@@ -132,7 +139,7 @@ class LoginSignup extends React.Component {
                 photoURL: user.photoURL
             }));
             this.setState({ isSigninInProgress: false });
-            this.props.navigation.navigate("Home");
+            this.props.navigation.navigate("HomePage");
         })
         .catch((error)=>{
             this.setState({ isSigninInProgress: false });
@@ -156,4 +163,3 @@ const mapStatetoProps = (state) => ({
 });
 
 export default connect(mapStatetoProps,{ setUserId,setEmailId,setDisplayName,setPhotoURL })(LoginSignup);
-
