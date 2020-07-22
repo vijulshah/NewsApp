@@ -136,12 +136,6 @@ class HomePage extends React.Component {
                             backgroundColor: colors.secondaryDark
                         },
                         container: {
-                            borderTopWidth: 1,
-                            borderLeftWidth: 1,
-                            borderRightWidth: 1,
-                            borderRightColor: colors.white,
-                            borderTopColor: colors.white,
-                            borderLeftColor: colors.white,
                             borderTopLeftRadius: 10,
                             borderTopRightRadius: 10,
                             backgroundColor: colors.primaryLightest

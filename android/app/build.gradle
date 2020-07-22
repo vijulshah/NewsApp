@@ -48,7 +48,7 @@ android {
             keyPassword 'keystore'
         }
         release {
-            storeFile file('/mnt/01D6366A5C687070/ReactNative/newsapp.jks')
+            storeFile file('/mnt/01D6366A5C687070/ReactNative/news app siged apk/news up.jks')
             storePassword 'keystore'
             keyAlias 'key0'
             keyPassword 'keystore'
