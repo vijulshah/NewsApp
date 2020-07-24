@@ -22,10 +22,10 @@ News info and articles are fetched from an API: http://newsapi.org
     <th>Logout</th>
   </tr>
   <tr>
-    <td><img src="images/Splash.png" width="220" height="400"/></td>
-    <td><img src="images/Login.png" width="220" height="400"/></td>
-    <td><img src="images/Loading.png" width="220" height="400"/></td>
-    <td><img src="images/Logout.png" width="220" height="400"/></td>
+    <td><img src="images/Splash.png" width="230" height="400"/></td>
+    <td><img src="images/Login.png" width="230" height="400"/></td>
+    <td><img src="images/Loading.png" width="230" height="400"/></td>
+    <td><img src="images/Logout.png" width="230" height="400"/></td>
   </tr>
   
   <tr>
@@ -35,10 +35,10 @@ News info and articles are fetched from an API: http://newsapi.org
     <th>Filter</th>
   </tr>
   <tr>
-    <td><img src="images/Feed1.png" width="220" height="400"/></td>
-    <td><img src="images/Feed2.png" width="220" height="400"/></td>
-    <td><img src="images/Bottomsheet1.png" width="220" height="400"/></td>
-    <td><img src="images/Bottomsheet2.png" width="220" height="400"/></td>
+    <td><img src="images/Feed1.png" width="230" height="400"/></td>
+    <td><img src="images/Feed2.png" width="230" height="400"/></td>
+    <td><img src="images/Bottomsheet1.png" width="230" height="400"/></td>
+    <td><img src="images/Bottomsheet2.png" width="230" height="400"/></td>
   </tr>
   
 </table>
